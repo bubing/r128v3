@@ -19,6 +19,8 @@ FDirectory(IncludeTrailingBackslash(Directory))
 {
 	CoInitializeEx(NULL, 0);
 
+	// Make sure presets directory exists.
+
 	ForceDirectories(FDirectory + CSubFolder);
 }
 

@@ -445,11 +445,11 @@ object Form1: TForm1
   object InputOpenDialog: TOpenDialog
     DefaultExt = 'wav'
     Filter = 'WAV (*.wav)|*.wav'
-    Left = 448
-    Top = 696
+    Left = 440
+    Top = 736
   end
   object XMLDocument1: TXMLDocument
-    Left = 488
-    Top = 656
+    Left = 528
+    Top = 736
   end
 end

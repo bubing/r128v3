@@ -3,6 +3,7 @@
 #include <vcl.h>
 #pragma hdrstop
 
+#include <ctime>
 #include <memory>
 #include <vector>
 
@@ -501,12 +502,47 @@ void __fastcall TForm1::DoBitBtnClick(TObject *Sender)
 
 void __fastcall TForm1::SavePresetButtonClick(TObject *Sender)
 {
-	//
+	AnsiString Result = InputBox("Preset name?", "", "");
 
-	FPresets->Put("Eric", "Muller");
-	FPresets->Put("Gloria", 8);
-    FPresets->Save("hallo");
+	if(Result.Trim().Length())
+	{
+		FPresets->Put("Loudness", LoudnessUpDown->Position);
+		FPresets->Put("TruePeak", TruePeakUpDown->Position);
+		FPresets->Put("LoudnessRange", LoudnessRangeUpDown->Position);
+		FPresets->Put("ProcessingMode", ProcessingModeRadioGroup->ItemIndex);
+		FPresets->Put("FrameLength", FrameLengthUpDown->Position);
+		FPresets->Put("GaussFilterSize", GaussFilterUpDown->Position);
+		FPresets->Put("TargetPeak", TargetPeakUpDown->Position);
+		FPresets->Put("MaxGainFactor", MaxGainUpDown->Position);
+		FPresets->Put("TargetRMS", TargetRMSUpDown->Position);
+		FPresets->Put("CompressFactor", CompressFactorUpDown->Position);
+		FPresets->Put("ChannelCoupling", ChannelCouplingCheckBox->Checked ? 1 : 0);
+		FPresets->Put("DCBiasCorrection", DCBiasCorrectionCheckBox->Checked ? 1 : 0);
+		FPresets->Put("AlternativeBoundaryMode", AlternativeBoundaryModeCheckBox->Checked ? 1 : 0);
+		FPresets->Put("Memo", PresetMemo->Text);
 
+		wchar_t Name[256];
+		DWORD BufferSize = sizeof(Name);
+
+		if(::GetUserName(Name, &BufferSize))
+		{
+			FPresets->Put("User", Name);
+		}
+
+        time_t curr_time;
+		tm* curr_tm;
+
+		time(&curr_time);
+		curr_tm = localtime(&curr_time);
+
+		char DateTime[256];
+
+		strftime(DateTime, sizeof(DateTime), "%B %d, %Y %T", curr_tm);
+
+		FPresets->Put("Timestamp", DateTime);
+
+		FPresets->Save(Result);
+	}
 }
 
 //---------------------------------------------------------------------------
