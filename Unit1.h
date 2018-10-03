@@ -13,6 +13,9 @@
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.Buttons.hpp>
 #include <Vcl.Dialogs.hpp>
+#include <Xml.XMLDoc.hpp>
+#include <Xml.xmldom.hpp>
+#include <Xml.XMLIntf.hpp>
 
 #include <map>
 
@@ -69,6 +72,7 @@ __published:	// IDE-managed Components
 	TOpenDialog *InputOpenDialog;
 	TStatusBar *StatusBar;
 	TComboBox *PresetsComboBox;
+	TXMLDocument *XMLDocument1;
 	void __fastcall InputSpeedButtonClick(TObject *Sender);
 	void __fastcall DoBitBtnClick(TObject *Sender);
 	void __fastcall SavePresetButtonClick(TObject *Sender);

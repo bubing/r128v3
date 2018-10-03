@@ -7,6 +7,7 @@
 
 #include <vcl.h>
 
+#include <map>
 #include <vector>
 
 //---------------------------------------------------------------------------
@@ -17,7 +18,17 @@ public:
 	TPresets(const AnsiString Directory);
 
 	void AvailablePresets(std::vector <AnsiString>& List);
+	void Load(const AnsiString Filename);
+	void Save(const AnsiString Filename);
+	AnsiString Get(const AnsiString Key, const AnsiString Def);
+	int Get(const AnsiString Key, const int Def);
+	void Put(const AnsiString Key, const AnsiString Value);
+	void Put(const AnsiString Key, const int Value);
+
 private:
+    AnsiString FDirectory;
+	std::map<AnsiString, AnsiString> FKeyValues;
+
 };
 
 //---------------------------------------------------------------------------

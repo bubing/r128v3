@@ -498,10 +498,17 @@ void __fastcall TForm1::DoBitBtnClick(TObject *Sender)
 }
 
 //---------------------------------------------------------------------------
+
 void __fastcall TForm1::SavePresetButtonClick(TObject *Sender)
 {
 	//
+
+	FPresets->Put("Eric", "Muller");
+	FPresets->Put("Gloria", 8);
+    FPresets->Save("hallo");
+
 }
+
 //---------------------------------------------------------------------------
 
 // Click on small label opens website.

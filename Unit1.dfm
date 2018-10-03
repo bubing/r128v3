@@ -20,7 +20,6 @@ object Form1: TForm1
     Height = 799
     Align = alLeft
     TabOrder = 0
-    ExplicitHeight = 753
     object Label11: TLabel
       Left = 8
       Top = 770
@@ -434,7 +433,6 @@ object Form1: TForm1
     ReadOnly = True
     ScrollBars = ssVertical
     TabOrder = 1
-    ExplicitHeight = 753
   end
   object StatusBar: TStatusBar
     Left = 0
@@ -443,12 +441,15 @@ object Form1: TForm1
     Height = 19
     Panels = <>
     SimplePanel = True
-    ExplicitTop = 753
   end
   object InputOpenDialog: TOpenDialog
     DefaultExt = 'wav'
     Filter = 'WAV (*.wav)|*.wav'
     Left = 448
     Top = 696
+  end
+  object XMLDocument1: TXMLDocument
+    Left = 488
+    Top = 656
   end
 end
