@@ -89,6 +89,10 @@ void TPresets::Load(const AnsiString Filename)
 		FKeyValues[Node->NodeName] = Node->Text;
 	}
 
+    FKeyValues
+
+	ShowMessage(IntToStr());
+
 }
 
 //---------------------------------------------------------------------------
@@ -127,13 +131,6 @@ void TPresets::Save(const AnsiString Filename)
 
 AnsiString TPresets::Get(const AnsiString Key, const AnsiString Def)
 {
-	std::map<AnsiString, AnsiString>::iterator idx = FKeyValues.find(Key);
-
-	if(idx != FKeyValues.end())
-	{
-        return idx->second;
-    }
-
 	return Def;
 }
 
@@ -141,7 +138,7 @@ AnsiString TPresets::Get(const AnsiString Key, const AnsiString Def)
 
 int TPresets::Get(const AnsiString Key, const int Def)
 {
-	return StrToIntDef(Get(Key, IntToStr(Def)), Def);
+	return Def;
 }
 
 //---------------------------------------------------------------------------

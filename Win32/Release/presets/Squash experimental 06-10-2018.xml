@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<R128preset License="CC Attribution-NonCommercial 4.0 International" Programming="Hens Zimmerman Audio">
+  <AlternativeBoundaryMode>1</AlternativeBoundaryMode>
+  <ChannelCoupling>1</ChannelCoupling>
+  <CompressFactor>30</CompressFactor>
+  <DCBiasCorrection>1</DCBiasCorrection>
+  <FrameLength>50</FrameLength>
+  <GaussFilterSize>31</GaussFilterSize>
+  <Loudness>-23</Loudness>
+  <LoudnessRange>7</LoudnessRange>
+  <MaxGainFactor>100</MaxGainFactor>
+  <Memo>EBU R128 European broadcast and squash it - Hens Zimmerman Audio - 05-10-2018</Memo>
+  <ProcessingMode>3</ProcessingMode>
+  <TargetPeak>95</TargetPeak>
+  <TargetRMS>0</TargetRMS>
+  <Timestamp>October 06, 2018 00:32:16</Timestamp>
+  <TruePeak>-4</TruePeak>
+  <User>hensz</User>
+</R128preset>

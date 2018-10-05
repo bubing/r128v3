@@ -77,12 +77,9 @@ __published:	// IDE-managed Components
 	void __fastcall DoBitBtnClick(TObject *Sender);
 	void __fastcall SavePresetButtonClick(TObject *Sender);
 	void __fastcall Label11Click(TObject *Sender);
-	void __fastcall PresetsComboBoxSelect(TObject *Sender);
-	void __fastcall PresetMemoClick(TObject *Sender);
 private:	// User declarations
 	bool Execute(const AnsiString Command);
 	void ParseJSON(std::map <AnsiString, AnsiString>& Dictionary, AnsiString Text);
-	void PopulateComboBox();
 
 	AnsiString FInputFile;
 	TPresets* FPresets;

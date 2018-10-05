@@ -391,18 +391,10 @@ object Form1: TForm1
         Top = 64
         Width = 225
         Height = 65
-        Color = clMoneyGreen
-        Font.Charset = ANSI_CHARSET
-        Font.Color = clNavy
-        Font.Height = -11
-        Font.Name = 'Verdana'
-        Font.Style = []
         Lines.Strings = (
           'Your description goes here')
-        ParentFont = False
         ScrollBars = ssVertical
         TabOrder = 1
-        OnClick = PresetMemoClick
       end
       object PresetsComboBox: TComboBox
         Left = 14

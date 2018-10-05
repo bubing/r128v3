@@ -387,8 +387,7 @@ void __fastcall TForm1::DoBitBtnClick(TObject *Sender)
 			);
 
 			Execute(FFMPEGCommand);
-
-			OutputMemo->Lines->Text = "Output written to: " + OutputFile;
+			OutputMemo->Lines->Add("Done!");
 
 			break;
 
@@ -431,11 +430,10 @@ void __fastcall TForm1::DoBitBtnClick(TObject *Sender)
 				OutputMemo->Lines->Add("Pass 2: linear gain change " + FInputFile);
 				OutputMemo->Lines->Add(FFMPEGCommand);
 				Execute(FFMPEGCommand);
-				OutputMemo->Lines->Text = "Output written to: " + OutputFile;
+				OutputMemo->Lines->Add("Done!");
 			}
 
 			break;
-
 		case 3:
 			OutputMemo->Text = "Pass 1: dynamic control ";
 
@@ -499,8 +497,9 @@ void __fastcall TForm1::DoBitBtnClick(TObject *Sender)
 				OutputMemo->Lines->Add("Pass 3: linear gain change " + FInputFile);
 				OutputMemo->Lines->Add(FFMPEGCommand);
 				Execute(FFMPEGCommand);
-				OutputMemo->Lines->Text = "Output written to: " + OutputFile;
+				OutputMemo->Lines->Add("Done!");
 			}
+
 
 			break;
 	}
@@ -572,38 +571,23 @@ void __fastcall TForm1::Label11Click(TObject *Sender)
 
 //---------------------------------------------------------------------------
 
-// User selects a preset from the combobox.
-
 void __fastcall TForm1::PresetsComboBoxSelect(TObject *Sender)
 {
 	FPresets->Load(PresetsComboBox->Items->Strings[PresetsComboBox->ItemIndex]);
 
-	LoudnessUpDown->Position =
-		FPresets->Get("Loudness", LoudnessUpDown->Position);
-	TruePeakUpDown->Position =
-		FPresets->Get("TruePeak", TruePeakUpDown->Position);
-	LoudnessRangeUpDown->Position =
-		FPresets->Get("LoudnessRange", LoudnessRangeUpDown->Position);
-	ProcessingModeRadioGroup->ItemIndex =
-		FPresets->Get("ProcessingMode", ProcessingModeRadioGroup->ItemIndex);
-	FrameLengthUpDown->Position =
-		FPresets->Get("FrameLength", FrameLengthUpDown->Position);
-	GaussFilterUpDown->Position =
-		FPresets->Get("GaussFilterSize", GaussFilterUpDown->Position);
-	TargetPeakUpDown->Position =
-		FPresets->Get("TargetPeak", TargetPeakUpDown->Position);
-	MaxGainUpDown->Position =
-		FPresets->Get("MaxGainFactor", MaxGainUpDown->Position);
-	TargetRMSUpDown->Position =
-		FPresets->Get("TargetRMS", TargetRMSUpDown->Position);
-	CompressFactorUpDown->Position =
-		FPresets->Get("CompressFactor", CompressFactorUpDown->Position);
-	ChannelCouplingCheckBox->Checked =
-		FPresets->Get("ChannelCoupling", ChannelCouplingCheckBox->Checked ? 1 : 0) == 1;
-	DCBiasCorrectionCheckBox->Checked =
-		FPresets->Get("DCBiasCorrection", DCBiasCorrectionCheckBox->Checked ? 1 : 0) == 1;
-	AlternativeBoundaryModeCheckBox->Checked =
-		FPresets->Get("AlternativeBoundaryMode", AlternativeBoundaryModeCheckBox->Checked ? 1 : 0) == 1;
+	LoudnessUpDown->Position = FPresets->Get("Loudness", LoudnessUpDown->Position);
+	TruePeakUpDown->Position = FPresets->Get("TruePeak", TruePeakUpDown->Position);
+	LoudnessRangeUpDown->Position = FPresets->Get("LoudnessRange", LoudnessRangeUpDown->Position);
+	ProcessingModeRadioGroup->ItemIndex = FPresets->Get("ProcessingMode", ProcessingModeRadioGroup->ItemIndex);
+	FrameLengthUpDown->Position = FPresets->Get("FrameLength", FrameLengthUpDown->Position);
+	GaussFilterUpDown->Position = FPresets->Get("GaussFilterSize", GaussFilterUpDown->Position);
+	TargetPeakUpDown->Position = FPresets->Get("TargetPeak", TargetPeakUpDown->Position);
+	MaxGainUpDown->Position = FPresets->Get("MaxGainFactor", MaxGainUpDown->Position);
+	TargetRMSUpDown->Position = FPresets->Get("TargetRMS", TargetRMSUpDown->Position);
+	CompressFactorUpDown->Position = FPresets->Get("CompressFactor", CompressFactorUpDown->Position);
+	ChannelCouplingCheckBox->Checked = FPresets->Get("ChannelCoupling", ChannelCouplingCheckBox->Checked ? 1 : 0) == 1;
+	DCBiasCorrectionCheckBox->Checked = FPresets->Get("DCBiasCorrection", DCBiasCorrectionCheckBox->Checked ? 1 : 0) == 1;
+	AlternativeBoundaryModeCheckBox->Checked = FPresets->Get("AlternativeBoundaryMode", AlternativeBoundaryModeCheckBox->Checked ? 1 : 0) == 1;
 	PresetMemo->Text = FPresets->Get("Memo", PresetMemo->Text);
 
 }

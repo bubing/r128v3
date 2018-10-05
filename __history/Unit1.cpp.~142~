@@ -431,11 +431,10 @@ void __fastcall TForm1::DoBitBtnClick(TObject *Sender)
 				OutputMemo->Lines->Add("Pass 2: linear gain change " + FInputFile);
 				OutputMemo->Lines->Add(FFMPEGCommand);
 				Execute(FFMPEGCommand);
-				OutputMemo->Lines->Text = "Output written to: " + OutputFile;
+				OutputMemo->Lines->Add("Done!");
 			}
 
 			break;
-
 		case 3:
 			OutputMemo->Text = "Pass 1: dynamic control ";
 
@@ -499,8 +498,9 @@ void __fastcall TForm1::DoBitBtnClick(TObject *Sender)
 				OutputMemo->Lines->Add("Pass 3: linear gain change " + FInputFile);
 				OutputMemo->Lines->Add(FFMPEGCommand);
 				Execute(FFMPEGCommand);
-				OutputMemo->Lines->Text = "Output written to: " + OutputFile;
+				OutputMemo->Lines->Add("Done!");
 			}
+
 
 			break;
 	}

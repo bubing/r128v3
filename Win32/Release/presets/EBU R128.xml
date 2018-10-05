@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<R128preset License="CC Attribution-NonCommercial 4.0 International" Programming="Hens Zimmerman Audio">
+  <AlternativeBoundaryMode>0</AlternativeBoundaryMode>
+  <ChannelCoupling>1</ChannelCoupling>
+  <CompressFactor>0</CompressFactor>
+  <DCBiasCorrection>0</DCBiasCorrection>
+  <FrameLength>500</FrameLength>
+  <GaussFilterSize>31</GaussFilterSize>
+  <Loudness>-23</Loudness>
+  <LoudnessRange>20</LoudnessRange>
+  <MaxGainFactor>10</MaxGainFactor>
+  <Memo>EBU R128 European broadcast - Hens Zimmerman Audio - 05-10-2018</Memo>
+  <ProcessingMode>2</ProcessingMode>
+  <TargetPeak>95</TargetPeak>
+  <TargetRMS>0</TargetRMS>
+  <Timestamp>October 06, 2018 00:00:57</Timestamp>
+  <TruePeak>-1</TruePeak>
+  <User>hensz</User>
+</R128preset>

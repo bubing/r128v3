@@ -82,12 +82,24 @@ void TPresets::Load(const AnsiString Filename)
 
 	// Traverse child nodes and store key/value pairs.
 
-	for (int idx = 0; idx < NodeElement->ChildNodes->Count; idx++)
+	for (int idx = 0; idx < nodeElement->ChildNodes->Count; idx++)
 	{
-		const _di_IXMLNode Node = NodeElement->ChildNodes->Get(idx);
-
-		FKeyValues[Node->NodeName] = Node->Text;
+			const _di_IXMLNode node = nodeElement->ChildNodes->Get(i);
+			// Display node name.
+			printf("Node name: %ls\n", node->NodeName);
+			// Check whether the node type is Text.
+			if (node->NodeType == ntText) {
+				// Display node text.
+				printf("\tThis is a node of type Text. The text is: %ls\n",
+					node->Text);
+			}
+			// Check whether the node is a text element.
+			if (node->IsTextElement) {
+				printf("\tThis is a text element. The text is: %ls\n",
+					node->Text);
+			}
 	}
+
 
 }
 
@@ -127,13 +139,6 @@ void TPresets::Save(const AnsiString Filename)
 
 AnsiString TPresets::Get(const AnsiString Key, const AnsiString Def)
 {
-	std::map<AnsiString, AnsiString>::iterator idx = FKeyValues.find(Key);
-
-	if(idx != FKeyValues.end())
-	{
-        return idx->second;
-    }
-
 	return Def;
 }
 
@@ -141,7 +146,7 @@ AnsiString TPresets::Get(const AnsiString Key, const AnsiString Def)
 
 int TPresets::Get(const AnsiString Key, const int Def)
 {
-	return StrToIntDef(Get(Key, IntToStr(Def)), Def);
+	return Def;
 }
 
 //---------------------------------------------------------------------------

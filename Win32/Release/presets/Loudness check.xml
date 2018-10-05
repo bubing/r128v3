@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<R128preset License="CC Attribution-NonCommercial 4.0 International" Programming="Hens Zimmerman Audio">
+  <AlternativeBoundaryMode>1</AlternativeBoundaryMode>
+  <ChannelCoupling>1</ChannelCoupling>
+  <CompressFactor>0</CompressFactor>
+  <DCBiasCorrection>1</DCBiasCorrection>
+  <FrameLength>500</FrameLength>
+  <GaussFilterSize>31</GaussFilterSize>
+  <Loudness>-23</Loudness>
+  <LoudnessRange>8</LoudnessRange>
+  <MaxGainFactor>10</MaxGainFactor>
+  <Memo>Check loudness only. Hens Zimmerman Audio. 05-10-2018</Memo>
+  <ProcessingMode>0</ProcessingMode>
+  <TargetPeak>95</TargetPeak>
+  <TargetRMS>0</TargetRMS>
+  <Timestamp>October 06, 2018 00:02:21</Timestamp>
+  <TruePeak>-1</TruePeak>
+  <User>hensz</User>
+</R128preset>

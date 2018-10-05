@@ -141,7 +141,7 @@ AnsiString TPresets::Get(const AnsiString Key, const AnsiString Def)
 
 int TPresets::Get(const AnsiString Key, const int Def)
 {
-	return StrToIntDef(Get(Key, IntToStr(Def)), Def);
+	return Def;
 }
 
 //---------------------------------------------------------------------------
